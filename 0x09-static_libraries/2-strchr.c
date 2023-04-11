@@ -2,7 +2,6 @@
 
 #include <stddef.h>
 
-
 /**
 
  * _strchr - Entry point
