@@ -1,40 +1,84 @@
-#include "holberton.h" 
-  
- /** 
-  * alloc_grid - create a 2-dimensional array with each element set to 0 
-  * @width: desired number of columns 
-  * @height: desired number of rows 
-  * 
-  * Return: NULL if memory allocation fails or any argument is less than 1, 
-  * otherwise return a pointer to the first element of the array. 
-  */ 
- int **alloc_grid(int width, int height) 
- { 
-         int **matrix, row, column; 
-  
-         if (width < 1 || height < 1) 
-                 return (NULL); 
-  
-         matrix = (int **) malloc(sizeof(int *) * height); 
-  
-         if (!matrix) 
-                 return (NULL); 
-  
-         for (row = 0; row < height; ++row) 
-         { 
-                 matrix[row] = (int *) malloc(sizeof(int) * width); 
-  
-                 if (!matrix[row]) 
-                 { 
-                         while (--row > -1) 
-                                 free(matrix[row]); 
-                         free(matrix); 
-                         return (NULL); 
-                 } 
-  
-                 for (column = 0; column < width; ++column) 
-                         matrix[row][column] = 0; 
-         } 
-  
-         return (matrix); 
- }
+#include "main.h"
+
+#include <stdlib.h>
+
+/**
+
+ * alloc_grid - nested loop to make grid
+
+ * @width: width input
+
+ * @height: height input
+
+ * Return: pointer to 2 dim. array
+
+ */
+
+int **alloc_grid(int width, int height)
+
+{
+
+        int **mee;
+
+        int x, y;
+
+        if (width <= 0 || height <= 0)
+
+                return (NULL);
+
+        mee = malloc(sizeof(int *) * height);
+                
+
+        if (mee == NULL)
+
+                return (NULL);
+
+        for (x = 0; x < height; x++)
+
+                
+        {
+
+                mee[x] = malloc(sizeof(int) * width);
+                
+
+                if (mee[x] == NULL)
+
+
+                {
+
+                
+			for (; x >= 0; x--)
+
+
+                                free(mee[x]);
+
+
+                        free(mee);
+
+
+                        return (NULL);
+                
+
+                }
+
+
+        }
+
+                
+        for (x = 0; x < height; x++)
+
+
+        {
+
+                for (y = 0; y < width; y++)
+
+                
+		mee[x][y] = 0;
+
+
+        }
+
+                
+        return (mee);
+
+}
