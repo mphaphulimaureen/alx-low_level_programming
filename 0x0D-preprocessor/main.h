@@ -4,6 +4,4 @@
 
 #define SIZE 1024  
 
-/* __SIZE_H__ */
-
-#endif  
+#endif /* _SIZE_H_ */ 
