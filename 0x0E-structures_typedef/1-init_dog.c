@@ -1,6 +1,6 @@
-#include <stdlib.h> 
-#include "dog.h" 
-  
+#ifndef DOG_H 
+#define DOG_H
+
  /** 
    * init_dog - Initializes a dog structure 
    * @d: A dog structure. 
