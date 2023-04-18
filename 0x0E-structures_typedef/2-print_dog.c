@@ -1,6 +1,5 @@
-#include <stdio.h> 
- #include <stdlib.h> 
- #include "dog.h" 
+#include "dog.h"
+#include <stdio.h>  
   
 /** 
  * print_dog - Prints all the data of a dog 
